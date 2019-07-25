@@ -1,5 +1,6 @@
 import React from "react";
 import { Modal } from "patternfly-react";
+import { Button } from "@patternfly/react-core";
 import { FormattedMessage } from "react-intl";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -27,15 +28,15 @@ class CreateBlueprint extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <button
-          className="btn btn-default"
+        <Button
+          variant="danger"
           id="cmpsr-btn-crt-blueprint"
           type="button"
           onClick={this.open}
-          disabled={this.props.disabled}
+          isDisabled={this.props.disabled}
         >
           <FormattedMessage defaultMessage="Create Blueprint" />
-        </button>
+        </Button>
         {this.state.showModal && (
           <CreateBlueprintModal
             blueprintNames={this.props.blueprintNames}

@@ -32,6 +32,10 @@ const plugins = [
       flatten: true
     },
     {
+      from: "./node_modules/@patternfly/patternfly/patternfly.css",
+      to: "./css"
+    },
+    {
       from: "./node_modules/patternfly/dist/css/patternfly.min.css",
       to: "./css"
     },
@@ -109,6 +113,14 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"]
+      },
+      {
+          test: /\.(eot|woff|woff2|svg|ttf)([\?]?.*)$/,
+          loader: 'file-loader',
+      },
+      {
+          test: /\.(jpg)$/i,
+          loader: 'url-loader',
       }
     ]
   }
